@@ -12,7 +12,7 @@
     $sql = "INSERT INTO add_customer(customer_name,contact,email_id,password,address) VALUES('{$cstmr_name}','{$cstmr_contact}','{$cstmr_email}','{$cstmr_password}','{$cstmr_address}')";
     $result = mysqli_query($conn, $sql);
 
-    header("Location: http://localhost/suigasbillingsystem/");
+    header("Location: http://localhost/suigasbillingsystem/view_customer.php");
 
     mysqli_close($conn);
 

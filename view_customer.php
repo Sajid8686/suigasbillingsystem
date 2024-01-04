@@ -16,10 +16,10 @@
     <?php
         $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
 
-        $sql = "SELECT * FROM sui_gas";
+        $sql = "SELECT * FROM add_customer";
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful");
 
-        if(mysqli_num_row($result)>0){
+        if(mysqli_num_rows($result)>0){
     ?>
     <table class="table table-bordered">
         <thead>
