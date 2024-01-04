@@ -14,7 +14,7 @@
    
     $result = mysqli_query($conn, $sql);
 
-    header("Location: http://localhost/suigasbillingsystem/view_customer.php");
+    header("Location: http://localhost/suigasbillingsystem/view_connection.php");
 
     mysqli_close($conn);
 ?>
