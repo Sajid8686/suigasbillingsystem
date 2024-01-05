@@ -10,8 +10,13 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    
   </head>
-  <body style="padding: 100px;">
+  <body>
+  <?php
+        include 'navbar.php';
+    ?>
+    <div class="section-1" style="padding: 100px;">
     <h1>Add Customer</h1>
     <form action="bill_data.php" method="post">
         <div class="mb-3">
@@ -50,7 +55,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
-
+      </div>
 
 
     <script

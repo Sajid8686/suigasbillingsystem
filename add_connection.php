@@ -11,32 +11,41 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="padding: 100px;">
-    <h1>Add Customer</h1>
-    <form action="save_data.php" method="post">
+  <body>
+  <?php
+        include 'navbar.php';
+    ?>
+    <div class="section-1" style="padding: 100px;">
+    <h1>Add Connection</h1>
+    <form action="connection_data.php" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">10-Digit Connection ID</label>
+            <input type="number" name="connectionID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Customer Name</label>
           <input type="text" name="customer_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Contact</label>
-          <input type="number" name="contact" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="form-label">Connection Type</label>
+            <input type="text" name="connection_type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" name="E-mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label for="exampleInputEmail1" class="form-label">Connection Date</label>
+          <input type="date" name="connection_date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" name="pwd" class="form-control" id="exampleInputPassword1">
+          <label for="exampleInputEmail1" class="form-label">Occupation</label>
+          <input type="text" name="occupation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Address</label>
-            <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
+          <label for="exampleInputPassword1" class="form-label">Address</label>
+          <input type="text" name="address" class="form-control" id="exampleInputPassword1">
+        </div>
+       
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-
+      </div>
 
 
 
