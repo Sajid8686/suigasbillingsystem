@@ -51,6 +51,7 @@
             <td><?php echo $row['email_id'] ?></td>
             <td><?php echo $row['password'] ?></td>
             <td><?php echo $row['address'] ?></td>
+            <td><a href="delete.php?id=<?php echo $row['customer_id']; ?>">Delete</a></td>
           </tr>
           <?php } ?>
         </tbody>
