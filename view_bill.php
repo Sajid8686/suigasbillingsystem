@@ -11,7 +11,11 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="padding: 100px;">
+  <body>
+      <?php
+      include 'navbar.php';
+      ?>
+  <div class="section-1" style="padding: 100px;">
     <h1>View Bill</h1>
     <?php
         $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
@@ -59,7 +63,7 @@
         </tbody>
       </table>
     <?php  } ?>
-
+  </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

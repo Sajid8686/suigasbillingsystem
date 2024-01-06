@@ -22,16 +22,16 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="http://localhost/suigasbillingsystem/admin_dashboard.php">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Customer
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Add Customer</a></li>
+                  <li><a class="dropdown-item" href="addcustomer.php">Add Customer</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">view Customers</a></li>
+                  <li><a class="dropdown-item" href="view_customer.php">view Customers</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -39,9 +39,9 @@
                   Connection
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Add Connection</a></li>
+                  <li><a class="dropdown-item" href="add_connection.php">Add Connection</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">view Connection</a></li>
+                  <li><a class="dropdown-item" href="view_connection.php">view Connection</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -49,13 +49,13 @@
                   Bill
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Add Bill</a></li>
+                  <li><a class="dropdown-item" href="add_bill.php">Add Bill</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">view Bill</a></li>
+                  <li><a class="dropdown-item" href="view_bill.php">view Bill</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
               </li>
             </ul>
 

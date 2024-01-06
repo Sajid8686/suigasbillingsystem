@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the login page or any other desired page
-header("Location: login.html");
+header("Location: adminForm.php");
 exit();
 ?>

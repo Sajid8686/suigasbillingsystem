@@ -17,7 +17,7 @@
         include 'navbar.php';
     ?>
     <div class="section-1" style="padding: 100px;">
-    <h1>Add Customer</h1>
+    <h1>Add Bill</h1>
     <form action="bill_data.php" method="post">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Consumer ID</label>
