@@ -15,25 +15,11 @@
   <body style="padding: 100px;">
     <h1>Your Bill Information</h1>
     <?php
-        // $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
-
-
-        // // Check if the form is submitted
-        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //     // Get the search term from the form
-        //     $searchTerm = $_POST["consumer_number"];
-        
-        //     // Perform a MySQL query to search for data
-        //     $sql = "SELECT * FROM add_bill WHERE consumer_id LIKE '%$searchTerm%'";
-        //     $result = $conn->query($sql);
-        
-        //     // Display the search results
-        //     if ($result->num_rows > 0) {
 
           if (isset($_POST["search"])) {
             $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
             $search_term = $_POST["consumer_number"];
-            
+
             $sql = "SELECT * FROM add_bill WHERE consumer_id = '$search_term'";
             $result = mysqli_query($conn, $sql) or die("Query Failed");
         
@@ -72,7 +58,9 @@
             <td><?php echo $row['unit_price'] ?></td>
             <td><?php echo $row['final_amount'] ?></td>
             <td><?php echo $row['due_date'] ?></td>
-            <td> <form action="generate_pdf.php" method="post"><button type="submit" name="generate_pdf">Generate PDF</button></form></td>
+            <!-- <td> <form action="generate_pdf.php" method="post"><button type="submit" name="generate_pdf">Generate PDF</button></form></td> -->
+            <!-- <td  style="display: flex; ;justify-content: center; align-items: center;"><a href="generate_pdf.php"><img style=" height: 30px;" src="./assets/icons8-print-50.png" alt=""></a></td> -->
+            <td style="display: flex; justify-content: center; align-items: center;"><a href="generate_pdf.php?id=<?php echo $row['consumer_id']; ?>"><img src="./assets/icons8-print-50.png" alt=""></a></td>
           </tr>
           <?php } ?>
         </tbody>

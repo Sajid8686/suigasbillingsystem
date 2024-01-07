@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electricity Bill</title>
+    <title>Gas Bill</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,17 +62,27 @@
 <body>
     <div class="container">
         <header>
-            <h1>Electricity Bill</h1>
+            <h1>Gas Bill</h1>
         </header>
+        <?php
 
+          if (isset($_POST["id"])) {
+            $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+            $print_term = $_POST["consumer_id"];
+
+            $sql = "SELECT * FROM add_bill WHERE consumer_id = '$print_term'";
+            $result = mysqli_query($conn, $sql) or die("Query Failed");
+        
+            if(mysqli_num_rows($result)> 0){
+                while($row = mysqli_fetch_assoc($result)){
+    ?>
         <div class="bill-details">
             <div>
-                <p><strong>Customer Name:</strong> John Doe</p>
-                <p><strong>Address:</strong> 123 Main Street, Cityville</p>
+                <p><strong>Customer Name:</strong><?php echo $row['bill_id'] ?></p>
+                <p><strong>Address:</strong><?php echo $row['bill_id'] ?></p>
             </div>
             <div>
-                <p><strong>Bill Date:</strong> January 1, 2024</p>
-                <p><strong>Due Date:</strong> January 15, 2024</p>
+                <p><strong>Due Date:</strong> <?php echo $row['bill_id'] ?></p>
             </div>
         </div>
 
@@ -85,19 +95,23 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Electricity Usage</td>
-                    <td>50.00</td>
+                    <td><?php echo $row['bill_id'] ?></td>
+                    <td><?php echo $row['bill_id'] ?></td>
                 </tr>
                 <tr>
-                    <td>Service Fee</td>
-                    <td>5.00</td>
+                    <td><?php echo $row['bill_id'] ?></td>
+                    <td><?php echo $row['bill_id'] ?></td>
                 </tr>
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
+        <?php  }
+            }
 
+          }
+        ?>          
         <div class="total">
-            <p><strong>Total Amount:</strong> 55.00 USD</p>
+            <p><strong>Total Amount:</strong><?php echo $row['bill_id'] ?></p>
         </div>
     </div>
 </body>
@@ -123,49 +137,49 @@
 
 
 
-<?php
-if (isset($_POST['generate_pdf'])) {
-    require_once('tcpdf/resources/autoload.php');
+<!-- <?php
+// if (isset($_POST['generate_pdf'])) {
+//     require_once('tcpdf/resources/autoload.php');
 
-    // Your database connection and data retrieval code here (as mentioned in the previous answer)
-    $conn = mysqli_connect("localhost", "root", "", "sui_gas");
-    // Fetch data from your table
-    $query = "SELECT * FROM add_bill";
-    $result = $conn->query($query);
+//     // Your database connection and data retrieval code here (as mentioned in the previous answer)
+//     $conn = mysqli_connect("localhost", "root", "", "sui_gas");
+//     // Fetch data from your table
+//     $query = "SELECT * FROM add_bill";
+//     $result = $conn->query($query);
 
-    // Check if there are rows in the result
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            // Process each row of data
-            // You can use $row['column_name'] to access specific columns
-        }
-    } else {
-        echo "No records found";
-    }
+//     // Check if there are rows in the result
+//     if ($result->num_rows > 0) {
+//         while ($row = $result->fetch_assoc()) {
+//             // Process each row of data
+//             // You can use $row['column_name'] to access specific columns
+//         }
+//     } else {
+//         echo "No records found";
+//     }
 
-    // Close the database connection
-    $conn->close();
+//     // Close the database connection
+//     $conn->close();
 
 
-    $pdf = new autoload();
-    $pdf->SetAutoPageBreak(true, 10);
+//     $pdf = new autoload();
+//     $pdf->SetAutoPageBreak(true, 10);
 
-    // Add a page
-    $pdf->AddPage();
+//     // Add a page
+//     $pdf->AddPage();
 
-    // Set font
-    $pdf->SetFont('times', '12', '', '', true);
+//     // Set font
+//     $pdf->SetFont('times', '12', '', '', true);
 
-    // Output data to PDF
-    $pdf->Cell(0, 10, 'Your Data:', 0, 1, 'C');
-    $pdf->Ln(10); // Add some space
+//     // Output data to PDF
+//     $pdf->Cell(0, 10, 'Your Data:', 0, 1, 'C');
+//     $pdf->Ln(10); // Add some space
 
-    // Loop through your data and add it to the PDF
-    while ($row = $result->fetch_assoc()) {
-        $pdf->Cell(0, 10, $row['column1'].' - '.$row['column2'], 0, 1);
-    }
+//     // Loop through your data and add it to the PDF
+//     while ($row = $result->fetch_assoc()) {
+//         $pdf->Cell(0, 10, $row['column1'].' - '.$row['column2'], 0, 1);
+//     }
 
-    // Output PDF to the browser or save to a file
-    $pdf->Output('output.pdf', 'D');
-}
-?>
+//     // Output PDF to the browser or save to a file
+//     $pdf->Output('output.pdf', 'D');
+// }
+?> -->

@@ -19,10 +19,24 @@
     <div class="section-1" style="padding: 100px;">
     <h1>Add Bill</h1>
     <form action="bill_data.php" method="post">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Consumer ID</label>
-            <input type="number" name="consumerID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
+    <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Customer Name</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select Customer Name</option>
+              <?php
+                $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+
+                $sql = "SELECT * FROM add_connection";
+                $result = mysqli_query($conn, $sql) or die("Query Failed");
+            
+                while ($row = mysqli_fetch_assoc($result)) {
+
+            ?>
+                <option value="<?php echo $row['connection_id'] ?>"><?php echo $row['10_dcid'] ?></option>
+
+                <?php } ?>
+            </select>
+            </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Billing Month</label>
           <input type="text" name="billing_month" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
