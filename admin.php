@@ -1,27 +1,25 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+if (isset($_POST["login"])) {
+    $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
+    $sql = "SELECT email, password FROM sign_up WHERE email = '$email' AND password = '$password'";
+    $result = mysqli_query($conn, $sql) or die("Query Failed");
 
-// Handle login form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    if(mysqli_num_rows($result)> 0){
+        
+        while($row = mysqli_fetch_assoc($result)){
+            session_start();
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['password'] = $row['password'];
 
-    // Retrieve user data from the database
-    $sql = "SELECT * FROM sign_up WHERE email='$email'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row["password"])) {
-            echo "Login successful!";
-            // Start a session and set session variables if needed
-        } else {
-            echo "Invalid password!";
+            header("Location: http://localhost/suigasbillingsystem/admin_dashboard.php");
         }
-    } else {
-        echo "User not found!";
+    }
+    else{
+       echo "Username and Password not Found";
     }
 }
 
