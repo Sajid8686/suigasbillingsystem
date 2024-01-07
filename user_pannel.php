@@ -63,6 +63,7 @@
             <td><?php echo $row['unit_price'] ?></td>
             <td><?php echo $row['final_amount'] ?></td>
             <td><?php echo $row['due_date'] ?></td>
+            <td> <form action="generate_pdf.php" method="post"><button type="submit" name="generate_pdf">Generate PDF</button></form></td>
           </tr>
           <?php } ?>
         </tbody>
