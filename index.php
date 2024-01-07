@@ -82,7 +82,7 @@ style="fill:#000000;">
       <label for="exampleInputEmail1" class="form-label">Reference No:</label>
       <input type="number" name="consumer_number" placeholder="Enter 10-digit reference no" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
-    <button type="submit" value="search" class="btn btn-primary">Search</button> 
+    <button type="submit" name="search" value="search" class="btn btn-primary">Search</button> 
     
   </form>
 </div>
@@ -91,5 +91,5 @@ style="fill:#000000;">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-  <script src="user_navbar.js"></script>
+  <!-- <script src="userr_navbar.js"></script> -->
 </html>

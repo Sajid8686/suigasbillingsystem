@@ -15,20 +15,29 @@
   <body style="padding: 100px;">
     <h1>Your Bill Information</h1>
     <?php
-        $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+        // $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
 
 
-        // Check if the form is submitted
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Get the search term from the form
-            $searchTerm = $_POST["consumer_number"];
+        // // Check if the form is submitted
+        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //     // Get the search term from the form
+        //     $searchTerm = $_POST["consumer_number"];
         
-            // Perform a MySQL query to search for data
-            $sql = "SELECT * FROM add_bill WHERE consumer_id LIKE '%$searchTerm%'";
-            $result = $conn->query($sql);
+        //     // Perform a MySQL query to search for data
+        //     $sql = "SELECT * FROM add_bill WHERE consumer_id LIKE '%$searchTerm%'";
+        //     $result = $conn->query($sql);
         
-            // Display the search results
-            if ($result->num_rows > 0) {
+        //     // Display the search results
+        //     if ($result->num_rows > 0) {
+
+          if (isset($_POST["search"])) {
+            $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+            $search_term = $_POST["consumer_number"];
+            
+            $sql = "SELECT * FROM add_bill WHERE consumer_id = '$search_term'";
+            $result = mysqli_query($conn, $sql) or die("Query Failed");
+        
+            if(mysqli_num_rows($result)> 0){
     ?>
     <table class="table table-bordered">
         <thead>
