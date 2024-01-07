@@ -38,7 +38,7 @@
             <label for="exampleInputEmail1" class="form-label">Address</label>
             <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button style = "background-color: #3ed0c5" type="submit" class="btn btn-primary">Submit</button>
       </form>
 
 

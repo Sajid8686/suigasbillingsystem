@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+
+      <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sui Gas Billing System</title>
+    <link rel="stylesheet" href="./navbar.css">  
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,57 +13,47 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Gas-Billing</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="http://localhost/suigasbillingsystem/admin_dashboard.php">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Customer
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="addcustomer.php">Add Customer</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="view_customer.php">view Customers</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Connection
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="add_connection.php">Add Connection</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="view_connection.php">view Connection</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Bill
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="add_bill.php">Add Bill</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="view_bill.php">view Bill</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
-              </li>
-            </ul>
-
-          </div>
+  <body style="height: 100vh">
+    <nav class="navbarr" id="navbar" class="main-navigation">
+      <div class="containerr">
+        <div class="title">
+          <div href="#" class="brand"><img class="logo-icon" src="./assets/icons8-m-67.png" alt=""> Gas-Billing</div>
         </div>
-      </nav>
+        <button type="button" id="toggleBtn" aria-label="Toggle navigation" class="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="menu nav-links">
+          <ul class="nav-list">
+            <li><a href="http://localhost/suigasbillingsystem/admin_dashboard.php">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Customer</a>
+              <ul class="dropdown-menu">
+                <li><a href="addcustomer.php">Add Customer</a></li>
+                <li><a href="view_customer.php">View Customers</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Connection</a>
+              <ul class="dropdown-menu">
+                <li><a href="add_connection.php">Add Connection</a></li>
+                <li><a href="view_connection.php">View Connection</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Bill</a>
+              <ul class="dropdown-menu">
+                <li><a href="add_bill.php">Add Bill</a></li>
+                <li><a href="view_bill.php">View Bill</a></li>
+              </ul>
+            </li>
+            <button class="logout-button lg-button"><a class="lg-button" href="logout.php">Logout</a></button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
+
+    <img style="position: fixed; width: 100%; height: auto; bottom: 0;" src="./assets/wave.svg" alt="">
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -81,4 +73,5 @@
       crossorigin="anonymous"
     ></script>
   </body>
+  <script src="nav.js"></script>
 </html>

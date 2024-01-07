@@ -52,7 +52,7 @@
           <input type="date" name="due_date" class="form-control" id="exampleInputPassword1">
         </div>
        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button style = "background-color: #3ed0c5" type="submit" class="btn btn-primary">Submit</button>
       </form>
 
       </div>

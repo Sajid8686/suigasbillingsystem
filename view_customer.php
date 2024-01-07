@@ -51,7 +51,7 @@
             <td><?php echo $row['email_id'] ?></td>
             <td><?php echo $row['password'] ?></td>
             <td><?php echo $row['address'] ?></td>
-            <td><a href="delete.php?id=<?php echo $row['customer_id']; ?>">Delete</a></td>
+            <td style="display: flex; justify-content: center; align-items: center;"><a href="delete.php?id=<?php echo $row['customer_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></a></td>
           </tr>
           <?php } ?>
         </tbody>
