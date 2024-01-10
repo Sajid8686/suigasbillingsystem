@@ -22,25 +22,11 @@
             <label for="exampleInputEmail1" class="form-label">10-Digit Connection ID</label>
             <input type="number" name="connectionID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
-            <div class="mb-3">
-            <label for="customerName" class="form-label">Customer Name</label>
-            <select name="customerID" class="form-select" aria-label="Default select example">
-                <option selected>Select Customer Name</option>
-                <?php
-                    $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
-
-                    $sql = "SELECT * FROM add_customer";
-                    $result = mysqli_query($conn, $sql) or die("Query Failed");
-
-                    while ($row = mysqli_fetch_assoc($result)) {
-
-                    ?>
-                      <option value="<?php echo $row['customer_id']; ?>"><?php echo $row['customer_name']; ?></option>
-                   <?php }
-                ?>
-            </select>
-        </div>
-  
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Customer Name</label>
+            <input type="text" name="customer_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+            
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Connection Type</label>
             <input type="text" name="connection_type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
