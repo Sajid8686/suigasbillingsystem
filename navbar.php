@@ -53,7 +53,7 @@
     </nav>
       
 
-    <img style="position: fixed; width: 100%; height: auto; bottom: 0;" src="./assets/wave.svg" alt="">
+    <!-- <img style="position: fixed; width: 100%; height: auto; bottom: 0;" src="./assets/wave.svg" alt=""> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

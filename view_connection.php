@@ -52,7 +52,7 @@
             <td><?php echo $row['connection_date'] ?></td>
             <td><?php echo $row['occupation'] ?></td>
             <td><?php echo $row['address'] ?></td>
-            <td  style="display: flex; justify-content: center; align-items: center;"><a href="delete.php?id=<?php echo $row['connection_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></a></td>
+            <td  style="display: flex; justify-content: center; align-items: center;"><a href="delete_connection.php?id=<?php echo $row['connection_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></a></td>
           </tr>
           <?php } ?>
         </tbody>
