@@ -18,42 +18,61 @@
     ?>
     <div class="section-1" style="padding: 100px;">
     <h1 style="text-align: center;">Add Bill</h1>
-    <form action="bill_data.php" method="post">
+
+    <?php
+        $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
+        $bil_id = $_GET['id'];
+        $sql = "SELECT * FROM add_bill WHERE bill_id = '{$bil_id}'";
+        $result = mysqli_query($conn, $sql) or die("Query Unsuccessful");
+
+        if(mysqli_num_rows($result)>0){
+            while($row = mysqli_fetch_assoc($result)){
+    ?>
+
+    <form action="update_data.php" method="post">
+
+   		<div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Bill ID</label>
+            <input type="hidden" name="bill_id" value="<?php echo $row['bill_id'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
    		<div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Connection ID</label>
-            <input type="number" name="consumerID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="number" name="consumerID" value="<?php echo $row['consumer_id'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Billing Month</label>
-          <input type="text" name="billing_month" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="text" name="billing_month" value="<?php echo $row['billing_month'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Current Reading</label>
-            <input type="number" name="current_reading" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="number" name="current_reading" value="<?php echo $row['current_reading'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Previous Reading</label>
-          <input type="number" name="previous_reading" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="number" name="previous_reading" value="<?php echo $row['previous_reading'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Total Units</label>
-          <input type="number" name="total_units" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="number" name="total_units" value="<?php echo $row['total_units'];?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Unit Price</label>
-          <input type="number" name="unit_price" class="form-control" id="exampleInputPassword1">
+          <input type="number" name="unit_price" value="<?php echo $row['unit_price'];?>" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Final Amount</label>
-          <input type="number" name="final_amount" class="form-control" id="exampleInputPassword1">
+          <input type="number" name="final_amount" value="<?php echo $row['final_amount'];?>" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Due Date</label>
-          <input type="date" name="due_date" class="form-control" id="exampleInputPassword1">
+          <input type="date" name="due_date" value="<?php echo $row['due_date'];?>" class="form-control" id="exampleInputPassword1">
         </div>
-       
-        <button style = "background-color: #3ed0c5" type="submit" class="btn btn-primary">Submit</button>
+       <input class="submit" type="submit" value="Update">
+        <!-- <button style = "background-color: #3ed0c5" type="submit" class="btn btn-primary">Update</button> -->
       </form>
+      <?php
+            }}
+?>
 
       </div>
 

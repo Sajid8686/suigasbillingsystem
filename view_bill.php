@@ -58,7 +58,8 @@
             <td><?php echo $row['unit_price'] ?></td>
             <td><?php echo $row['final_amount'] ?></td>
             <td><?php echo $row['due_date'] ?></td>
-            <td  style="display: flex; justify-content: center; align-items: center;"><a href="delete_bill.php?id=<?php echo $row['bill_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></a></td>
+            <td  style="display: flex; justify-content: center; align-items: center;"><a href="update_bill.php?id=<?php echo $row['bill_id']; ?>"><img src="./assets/pencil-square.svg" alt="">
+           <a href="delete_bill.php?id=<?php echo $row['bill_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></td>
           </tr>
           <?php } ?>
         </tbody>
