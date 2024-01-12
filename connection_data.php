@@ -10,7 +10,7 @@
 
     $conn = mysqli_connect("localhost", "root", "", "sui_gas") or die("Connection Failed");
 
-    $sql = "INSERT INTO add_connection(10_dcid,customer_name,connection_type,connection_date,occupation,address) VALUES('{$con_ID}','{$con_customerName}','{$con_Type}','{$con_Date}','{$con_occupation}','{$con_address}')";
+    $sql = "INSERT INTO add_connection(tdcid,customer_name,connection_type,connection_date,occupation,address) VALUES('{$con_ID}','{$con_customerName}','{$con_Type}','{$con_Date}','{$con_occupation}','{$con_address}')";
    
     $result = mysqli_query($conn, $sql);
 

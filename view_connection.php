@@ -46,13 +46,13 @@
             ?>
 
           <tr>
-            <td><?php echo $row['10_dcid'] ?></td>
+            <td><?php echo $row['tdcid'] ?></td>
             <td><?php echo $row['customer_name'] ?></td>
             <td><?php echo $row['connection_type'] ?></td>
             <td><?php echo $row['connection_date'] ?></td>
             <td><?php echo $row['occupation'] ?></td>
             <td><?php echo $row['address'] ?></td>
-            <td  style="display: flex; justify-content: center; align-items: center;"><a href="delete_connection.php?id=<?php echo $row['connection_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></a></td>
+            <td  style="display: flex; justify-content: center; align-items: center;"><a href="update_connection.php?id=<?php echo $row['connection_id']; ?>"><img src="./assets/pencil-square.svg" alt=""></a><a href="delete_connection.php?id=<?php echo $row['connection_id']; ?>"><img src="./assets/icons8-trash.svg" alt=""></a></td>
           </tr>
           <?php } ?>
         </tbody>
